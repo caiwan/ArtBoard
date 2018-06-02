@@ -4,7 +4,9 @@
     "version": "0.1.0",
     "command": "sh",
     "isShellCommand": true,
-    "args": ["-c"],
+    "args": [
+        "-c"
+    ],
     "showOutput": "always",
     "suppressTaskName": true,
     "options": {
@@ -13,16 +15,22 @@
     "tasks": [
         {
             "taskName": "cmake",
-            "args": ["cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug .."]     
+            "args": [
+                "cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug .."
+            ]
         },
         {
             "taskName": "make",
-            "args": ["make -j 8"],
-            "isBuildCommand": true            
-        }, 
+            "args": [
+                "make -j 8"
+            ],
+            "isBuildCommand": true
+        },
         {
             "taskName": "run",
-            "args": ["${workspaceRoot}/build/bin/artpad.app/Contents/MacOS/artpad"]
+            "args": [
+                "${workspaceRoot}/build/bin/run.sh"
+            ]
         }
     ]
 }

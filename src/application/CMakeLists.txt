@@ -10,7 +10,7 @@ set(CMAKE_AUTOMOC ON)
 qt5_wrap_ui(UI_HEADERS ${UI_FILES})
 
 # Generate rules for building source files from the resources
-qt5_add_resources(QRCS "res/resources.qrc")
+qt5_add_resources(QRCS "resources.qrc")
 
 file(GLOB_RECURSE SOURCE_FILES *.cpp)
 file(GLOB_RECURSE HEADER_FILES *.h)
@@ -18,7 +18,7 @@ file(GLOB_RECURSE HEADER_FILES *.h)
 add_library(${MODULE_NAME} STATIC ${SOURCE_FILES} ${HEADER_FILES} ${UI_HEADERS} ${QRCS})
 
 # Add the Qt5 Widgets for linking
-target_link_libraries(${MODULE_NAME} Qt5::Widgets Qt5::Core)
+target_link_libraries(${MODULE_NAME} Qt5::Widgets Qt5::Qml Qt5::Core)
 
 include_directories("${JSON_INCLUDE_DIR}")
 

@@ -1,1 +1,1 @@
-./${_APPLICATION_NAME}.app/Contents/MacOS/${_APPLICATION_NAME}
+./bin/${_APPLICATION_NAME}.app/Contents/MacOS/${_APPLICATION_NAME}
