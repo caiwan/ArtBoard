@@ -12,4 +12,5 @@ public: // add, remove, get, ...
 private:
 PictureList m_pictures;
 };
+
 }

@@ -1,8 +1,8 @@
 #include "application.h"
 
-class WindowsApplication : public NodeEditor::Application {
+class WindowsApplication : public ArtBoard::Application {
 public:
-	WindowsApplication(int argc, char **argv) : NodeEditor::Application(argc, argv) {
+	WindowsApplication(int argc, char **argv) : ArtBoard::Application(argc, argv) {
 	}
 };
 

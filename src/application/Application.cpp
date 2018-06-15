@@ -1,12 +1,9 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <QQmlContext>
-#include <QScreen>
-#include <QDebug>
-
 #include "Application.h"
 
 #include "Editor.h"
+#include "ui/MainWindow.h"
+#include "ui/PageScene.h"
+#include "ui/WorkspaceWidget.h"
 
 using namespace ArtBoard;
 
@@ -35,12 +32,17 @@ Application::~Application()
 
 int Application::Execute()
 {
-	QQmlApplicationEngine engine;
 	Editor editor;
 
-	engine.load(QUrl(QLatin1String("qrc:/ui/MainWindow.qml")));
-	if (engine.rootObjects().isEmpty())
-		return -1;
+    MainWindow mw;
+    WorkspaceWidget workspace;
+    PageScene page;
+    
+    mw.setCentralWidget(&workspace);
+    
+    workspace.SetGraphicsScene(&page);
+
+    mw.show();
 
 	return QApplication::exec();
 }

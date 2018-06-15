@@ -18,7 +18,7 @@ file(GLOB_RECURSE HEADER_FILES *.h)
 add_library(${MODULE_NAME} STATIC ${SOURCE_FILES} ${HEADER_FILES} ${UI_HEADERS} ${QRCS})
 
 # Add the Qt5 Widgets for linking
-target_link_libraries(${MODULE_NAME} Qt5::Widgets Qt5::Qml Qt5::Core)
+target_link_libraries(${MODULE_NAME} Qt5::Widgets Qt5::Core)
 
 include_directories("${JSON_INCLUDE_DIR}")
 
